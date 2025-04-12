@@ -2,7 +2,7 @@ from discord import Intents, Client
 import Responses
 from datetime import datetime
 
-API_KEY: str = 'MTM2MDMxOTgwODEyOTg1OTgxNQ.GTURaW.a7JBLZzhLuMVA-XgkX7X-LGMCvoY5xv1361F3U'
+API_KEY: str = 'PLACE_YOUR_DISCORD_BOT_API_KEY_HERE'
 
 
 def run_bot(token: str):
