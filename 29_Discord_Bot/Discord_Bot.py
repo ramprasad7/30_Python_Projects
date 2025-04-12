@@ -2,7 +2,7 @@ from discord import Intents, Client
 import Responses
 from datetime import datetime
 
-API_KEY: str = 'PLACE_YOUR_DISCORD_BOT_API_KEY_HERE'
+TOKEN: str = 'PLACE_YOUR_DISCORD_BOT_API_KEY_HERE'
 
 
 def run_bot(token: str):
@@ -36,7 +36,7 @@ def run_bot(token: str):
 
 
 def main() -> None:
-    run_bot(API_KEY)
+    run_bot(TOKEN)
 
 if __name__ == '__main__':
     main()
