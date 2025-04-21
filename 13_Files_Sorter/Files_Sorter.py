@@ -28,6 +28,17 @@ def sort_files(source_path: str):
 
                 shutil.move(file_path,target_path)
 
+def resort_files(source_path: str) -> None:
+    for root_dir, sub_dirs, filenames in os.walk(source_path):
+        for sub_dir in sub_dirs:
+            sub_dir_path: str = os.path.join(root_dir,sub_dir)
+            #print(sub_dir_path)
+            for filename in os.listdir(sub_dir_path):
+                file_path: str = os.path.join(sub_dir_path,filename)
+                target_path: str = os.path.join(source_path,filename)
+                shutil.move(file_path,target_path)
+
+
 def remove_empty_folder(source_path: str):
     #Removes all empty folders
     for root_dir, sub_dir, filenames in os.walk(source_path, topdown=False):
@@ -43,9 +54,10 @@ def main() -> None:
     # file_path = filedialog.askopenfilename()
     user_input: str = filedialog.askdirectory()
     #user_input: str = input("Please provide a file path for Sorting: ")
-    print(user_input)
+    #print(user_input)
     if os.path.exists(user_input):
         sort_files(user_input)
+        resort_files(user_input)
         remove_empty_folder(user_input)
         print("Files are Sorted! Successfully")
     else:
